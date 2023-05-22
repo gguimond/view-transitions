@@ -81,7 +81,7 @@
     const content = await getPageContent(toPath);
     console.log(toPath);
     if (toPath.indexOf("page-3") && document.getElementById("target")) {
-      document.getElementById("target").style.viewTransitionName = "main-title";
+      document.getElementById("target").style.viewTransitionName = "";
     }
     const transition = startViewTransition(() => {
       if (document.getElementById("target")) {
