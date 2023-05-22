@@ -192,3 +192,7 @@ body {
   view-transition-name: main-header-text;
   width: fit-content;
 }
+
+.banner {
+  view-transition-name: main-title;
+}

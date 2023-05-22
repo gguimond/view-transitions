@@ -15,6 +15,7 @@
       <h1 class="content-title">Page 1</h1>
       <p>This is the content for page 1.</p>
       <p>Why not check out <a href="./page-2.html">page 2</a>?</p>
+      <p>Why not check out <a id="target" href="./page-3.html">page 3</a>?</p>
     </main>
   </body>
 </html>
@@ -78,13 +79,21 @@
 
   onLinkNavigate(async ({ toPath }) => {
     const content = await getPageContent(toPath);
-
-    startViewTransition(() => {
+    console.log(toPath);
+    if (toPath.indexOf("page-3")) {
+      document.getElementById("target").style.viewTransitionName = "main-title";
+    }
+    const transition = startViewTransition(() => {
       // This is a pretty heavy-handed way to update page content.
       // In production, you'd likely be modifying DOM elements directly,
       // or using a framework.
       // innerHTML is used here just to keep the DOM update super simple.
       document.body.innerHTML = content;
+    });
+
+    transition.finished.finally(() => {
+      // Clear the temporary tag
+      document.getElementById("target").style.viewTransitionName = "";
     });
   });
 </script>
