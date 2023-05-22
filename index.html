@@ -80,6 +80,7 @@
   onLinkNavigate(async ({ toPath }) => {
     const content = await getPageContent(toPath);
     console.log(toPath);
+    console.log(document.getElementById("target"));
     if (toPath.indexOf("page-3")) {
       document.getElementById("target").style.viewTransitionName = "main-title";
     }
