@@ -187,3 +187,8 @@ body {
 .main-header {
   view-transition-name: main-header;
 }
+
+.main-header-text {
+  view-transition-name: main-header-text;
+  width: fit-content;
+}
