@@ -80,12 +80,13 @@
   onLinkNavigate(async ({ toPath }) => {
     const content = await getPageContent(toPath);
     console.log(toPath);
-    console.log(document.getElementById("target"));
-    if (toPath.indexOf("page-3")) {
+    if (toPath.indexOf("page-3") && document.getElementById("target")) {
       document.getElementById("target").style.viewTransitionName = "main-title";
     }
     const transition = startViewTransition(() => {
-      document.getElementById("target").style.viewTransitionName = "";
+      if (document.getElementById("target")) {
+        document.getElementById("target").style.viewTransitionName = "";
+      }
       // This is a pretty heavy-handed way to update page content.
       // In production, you'd likely be modifying DOM elements directly,
       // or using a framework.
