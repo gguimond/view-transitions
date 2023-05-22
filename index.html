@@ -81,12 +81,12 @@
     const content = await getPageContent(toPath);
     console.log(toPath);
     if (toPath.indexOf("page-3") && document.getElementById("target")) {
-      document.getElementById("target").style.viewTransitionName = "main-title";
+      //document.getElementById("target").style.viewTransitionName = "main-title";
     }
     const transition = startViewTransition(() => {
-      if (document.getElementById("target")) {
-        //document.getElementById("target").style.viewTransitionName = "";
-      }
+      /*if (document.getElementById("target")) {
+        document.getElementById("target").style.viewTransitionName = "";
+      }*/
       // This is a pretty heavy-handed way to update page content.
       // In production, you'd likely be modifying DOM elements directly,
       // or using a framework.

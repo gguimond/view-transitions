@@ -197,6 +197,10 @@ body {
   view-transition-name: main-title;
 }
 
+#target{
+  view-transition-name: main-title;
+}
+
 ::view-transition-old(main-title),
 ::view-transition-new(main-title) {
   animation: none;
