@@ -193,7 +193,9 @@ body {
   width: fit-content;
 }
 
-
+.banner {
+  view-transition-name: main-title;
+}
 
 ::view-transition-old(main-title),
 ::view-transition-new(main-title) {
