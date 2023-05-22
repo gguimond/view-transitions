@@ -197,12 +197,12 @@ body {
   view-transition-name: main-title;
 }
 
-::view-transition-old(banner),
-::view-transition-new(banner) {
+::view-transition-old(main-title),
+::view-transition-new(main-title) {
   animation: none;
   mix-blend-mode: normal;
 }
 
-::view-transition-image-pair(banner) {
+::view-transition-image-pair(main-title) {
   isolation: none;
 }
