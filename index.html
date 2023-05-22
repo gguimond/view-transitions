@@ -84,18 +84,12 @@
       document.getElementById("target").style.viewTransitionName = "main-title";
     }
     const transition = startViewTransition(() => {
+      document.getElementById("target").style.viewTransitionName = "";
       // This is a pretty heavy-handed way to update page content.
       // In production, you'd likely be modifying DOM elements directly,
       // or using a framework.
       // innerHTML is used here just to keep the DOM update super simple.
       document.body.innerHTML = content;
     });
-    console.log(transition);
-    if (transition) {
-      transition.finished.finally(() => {
-        // Clear the temporary tag
-        document.getElementById("target").style.viewTransitionName = "";
-      });
-    }
   });
 </script>
