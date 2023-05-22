@@ -196,3 +196,13 @@ body {
 .banner {
   view-transition-name: main-title;
 }
+
+::view-transition-old(banner),
+::view-transition-new(banner) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-image-pair(banner) {
+  isolation: none;
+}
