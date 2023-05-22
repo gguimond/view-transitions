@@ -38,7 +38,7 @@
       return;
     }
 
-    document.startViewTransition(callback);
+    return document.startViewTransition(callback);
   }
 
   function isBackNavigation(navigateEvent) {
@@ -91,9 +91,11 @@
       document.body.innerHTML = content;
     });
     console.log(transition);
-    transition.finished.finally(() => {
-      // Clear the temporary tag
-      document.getElementById("target").style.viewTransitionName = "";
-    });
+    if (transition) {
+      transition.finished.finally(() => {
+        // Clear the temporary tag
+        document.getElementById("target").style.viewTransitionName = "";
+      });
+    }
   });
 </script>
